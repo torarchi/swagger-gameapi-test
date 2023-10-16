@@ -58,7 +58,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Genre"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="genre",
  *          required=true,
@@ -84,7 +84,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Genre"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="genre",
  *          required=true,
@@ -122,7 +122,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Genre"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="genre",
  *          required=true,

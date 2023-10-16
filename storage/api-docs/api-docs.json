@@ -11,7 +11,7 @@
                 "tags": [
                     "Game"
                 ],
-                "summary": "Список постов",
+                "summary": "Список",
                 "responses": {
                     "200": {
                         "description": "ok",
@@ -133,7 +133,7 @@
                     {
                         "name": "game",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }
@@ -178,7 +178,7 @@
                     {
                         "name": "game",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }
@@ -211,7 +211,7 @@
                     {
                         "name": "game",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }
@@ -385,12 +385,12 @@
                 "tags": [
                     "Genre"
                 ],
-                "summary": "Игра конкретная",
+                "summary": "Жанр конкретный",
                 "parameters": [
                     {
                         "name": "genre",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }
@@ -431,7 +431,7 @@
                     {
                         "name": "genre",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }
@@ -464,7 +464,7 @@
                     {
                         "name": "genre",
                         "in": "path",
-                        "description": "ID поста",
+                        "description": "ID",
                         "required": true,
                         "example": 1
                     }

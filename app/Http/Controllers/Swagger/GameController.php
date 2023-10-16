@@ -38,7 +38,7 @@ use App\Http\Controllers\Controller;
  * 
  * @OA\Get(
  *      path="/api/games",
- *      summary="Список постов",
+ *      summary="Список",
  *      tags={"Game"},
  * 
  *      @OA\Response(
@@ -62,7 +62,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Game"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="game",
  *          required=true,
@@ -89,7 +89,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Game"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="game",
  *          required=true,
@@ -129,7 +129,7 @@ use App\Http\Controllers\Controller;
  *      tags={"Game"},
  * 
  *      @OA\Parameter(
- *          description="ID поста",
+ *          description="ID",
  *          in="path",
  *          name="game",
  *          required=true,
