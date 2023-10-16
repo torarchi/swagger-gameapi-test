@@ -1,0 +1,528 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ozimiz game",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/": {},
+        "/api/games": {
+            "get": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Список постов",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 12
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "name"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "description"
+                                                    },
+                                                    "genre_id": {
+                                                        "type": "id",
+                                                        "example": "42"
+                                                    },
+                                                    "genre_name": {
+                                                        "type": "string",
+                                                        "example": "genre_name"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Создание игры",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "13"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "name"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "example": "description"
+                                            },
+                                            "genre_id": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "genre_id": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/games/{game}": {
+            "get": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Игра конкретная",
+                "parameters": [
+                    {
+                        "name": "game",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "genre_id": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Удаление",
+                "parameters": [
+                    {
+                        "name": "game",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "done"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Game"
+                ],
+                "summary": "Обновление",
+                "parameters": [
+                    {
+                        "name": "game",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "for edit name"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "example": "description for edit"
+                                            },
+                                            "genre_id": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        },
+                                        "genre_id": {
+                                            "type": "integer",
+                                            "example": "2"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/genres": {
+            "get": {
+                "tags": [
+                    "Genre"
+                ],
+                "summary": "Список жанров",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 12
+                                                    },
+                                                    "genre_name": {
+                                                        "type": "string",
+                                                        "example": "name"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "description"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Genre"
+                ],
+                "summary": "Создание жанра",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "13"
+                                            },
+                                            "genre_name": {
+                                                "type": "string",
+                                                "example": "name"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "example": "description"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "genre_name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/genres/{genre}": {
+            "get": {
+                "tags": [
+                    "Genre"
+                ],
+                "summary": "Игра конкретная",
+                "parameters": [
+                    {
+                        "name": "genre",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "genre_name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Genre"
+                ],
+                "summary": "Удаление",
+                "parameters": [
+                    {
+                        "name": "genre",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "done"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Genre"
+                ],
+                "summary": "Обновление",
+                "parameters": [
+                    {
+                        "name": "genre",
+                        "in": "path",
+                        "description": "ID поста",
+                        "required": true,
+                        "example": 1
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer",
+                                                "example": "2"
+                                            },
+                                            "genre_name": {
+                                                "type": "string",
+                                                "example": "for edit name"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "example": "description for edit"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": "13"
+                                        },
+                                        "genre_name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "example": "description"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
