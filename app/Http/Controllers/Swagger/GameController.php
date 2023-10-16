@@ -14,7 +14,6 @@ use App\Http\Controllers\Controller;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="id", type="integer", example="13"),
  *                      @OA\Property(property="name", type="string", example="name"),
  *                      @OA\Property(property="description", type="string", example="description"),
  *                      @OA\Property(property="genre_id", type="integer", example="2"),
@@ -27,7 +26,6 @@ use App\Http\Controllers\Controller;
  *          response=200,
  *          description="ok",
  *          @OA\JsonContent(
- *              @OA\Property(property="id", type="integer", example="13"),
  *              @OA\Property(property="name", type="string", example="name"),
  *              @OA\Property(property="description", type="string", example="description"),
  *              @OA\Property(property="genre_id", type="integer", example="2"),
@@ -46,7 +44,6 @@ use App\Http\Controllers\Controller;
  *          description="ok",
  *          @OA\JsonContent(
  *              @OA\Property(property="data", type="array", @OA\Items(
- *                  @OA\Property(property="id", type="integer", example=12),
  *                  @OA\Property(property="name", type="string", example="name"),
  *                  @OA\Property(property="description", type="string", example="description"),
  *                  @OA\Property(property="genre_id", type="id", example="42"),
@@ -58,7 +55,7 @@ use App\Http\Controllers\Controller;
  * 
  * @OA\Get(
  *      path="/api/games/{game}",
- *      summary="Игра конкретная",
+ *      summary="Игра конкретная по ID",
  *      tags={"Game"},
  * 
  *      @OA\Parameter(
@@ -73,7 +70,7 @@ use App\Http\Controllers\Controller;
  *          response=200,
  *          description="ok",
  *          @OA\JsonContent(
- *              @OA\Property(property="id", type="integer", example="13"),
+ *              @OA\Property(property="id", type="id", example="id"),
  *              @OA\Property(property="name", type="string", example="name"),
  *              @OA\Property(property="description", type="string", example="description"),
  *              @OA\Property(property="genre_id", type="integer", example="2"),
@@ -100,7 +97,6 @@ use App\Http\Controllers\Controller;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="id", type="integer", example="2"),
  *                      @OA\Property(property="name", type="string", example="for edit name"),
  *                      @OA\Property(property="description", type="string", example="description for edit"),
  *                      @OA\Property(property="genre_id", type="integer", example="2"),
@@ -113,7 +109,6 @@ use App\Http\Controllers\Controller;
  *          response=200,
  *          description="ok",
  *          @OA\JsonContent(
- *              @OA\Property(property="id", type="integer", example="13"),
  *              @OA\Property(property="name", type="string", example="name"),
  *              @OA\Property(property="description", type="string", example="description"),
  *              @OA\Property(property="genre_id", type="integer", example="2"),

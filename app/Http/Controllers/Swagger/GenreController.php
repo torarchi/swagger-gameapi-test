@@ -14,7 +14,6 @@ use App\Http\Controllers\Controller;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="id", type="integer", example="13"),
  *                      @OA\Property(property="genre_name", type="string", example="name"),
  *                      @OA\Property(property="description", type="string", example="description"),
  *                  )
@@ -54,7 +53,7 @@ use App\Http\Controllers\Controller;
  * 
  * @OA\Get(
  *      path="/api/genres/{genre}",
- *      summary="Жанр конкретный",
+ *      summary="Жанр конкретный по ID",
  *      tags={"Genre"},
  * 
  *      @OA\Parameter(
@@ -95,7 +94,6 @@ use App\Http\Controllers\Controller;
  *          @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="id", type="integer", example="2"),
  *                      @OA\Property(property="genre_name", type="string", example="for edit name"),
  *                      @OA\Property(property="description", type="string", example="description for edit"),
  *                  )

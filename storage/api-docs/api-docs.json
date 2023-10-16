@@ -23,10 +23,6 @@
                                             "type": "array",
                                             "items": {
                                                 "properties": {
-                                                    "id": {
-                                                        "type": "integer",
-                                                        "example": 12
-                                                    },
                                                     "name": {
                                                         "type": "string",
                                                         "example": "name"
@@ -67,10 +63,6 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "id": {
-                                                "type": "integer",
-                                                "example": "13"
-                                            },
                                             "name": {
                                                 "type": "string",
                                                 "example": "name"
@@ -98,10 +90,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "id": {
-                                            "type": "integer",
-                                            "example": "13"
-                                        },
                                         "name": {
                                             "type": "string",
                                             "example": "name"
@@ -128,7 +116,7 @@
                 "tags": [
                     "Game"
                 ],
-                "summary": "Игра конкретная",
+                "summary": "Игра конкретная по ID",
                 "parameters": [
                     {
                         "name": "game",
@@ -146,8 +134,8 @@
                                 "schema": {
                                     "properties": {
                                         "id": {
-                                            "type": "integer",
-                                            "example": "13"
+                                            "type": "id",
+                                            "example": "id"
                                         },
                                         "name": {
                                             "type": "string",
@@ -223,10 +211,6 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "id": {
-                                                "type": "integer",
-                                                "example": "2"
-                                            },
                                             "name": {
                                                 "type": "string",
                                                 "example": "for edit name"
@@ -254,10 +238,6 @@
                             "application/json": {
                                 "schema": {
                                     "properties": {
-                                        "id": {
-                                            "type": "integer",
-                                            "example": "13"
-                                        },
                                         "name": {
                                             "type": "string",
                                             "example": "name"
@@ -332,10 +312,6 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "id": {
-                                                "type": "integer",
-                                                "example": "13"
-                                            },
                                             "genre_name": {
                                                 "type": "string",
                                                 "example": "name"
@@ -476,10 +452,6 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "id": {
-                                                "type": "integer",
-                                                "example": "2"
-                                            },
                                             "genre_name": {
                                                 "type": "string",
                                                 "example": "for edit name"
