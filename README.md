@@ -1,6 +1,9 @@
 # test application 
 swagger без jwt-авторизации для простоты в проверке
 
+Ссылка на демо видео
+!
+https://www.youtube.com/watch?v=XtE9HGdgrrk&ab_channel=archie
 
 ## Установка и запуск
 
@@ -38,3 +41,4 @@ php artisan migrate
 ```
 php artisan serve
 ```
+
