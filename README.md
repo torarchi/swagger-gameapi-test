@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=XtE9HGdgrrk&ab_channel=archie
 
 Шаг 1: Клонирование репозитория
 ```
-git clone https://github.com/toarda/ozimiz-test.git
+git clone https://github.com/toarda/swagger-gameapi-test.git
 ```
 Шаг 2: Перейдите в каталог проекта
 ```
