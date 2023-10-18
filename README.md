@@ -36,7 +36,6 @@ php artisan key:generate
 Шаг 7: Выполните миграции с сидерами
 ```
 php artisan migrate --seed
-
 ```
 Шаг 8: Запустите веб-сервер
 ```
