@@ -33,9 +33,10 @@ php artisan key:generate
 
 Измените настройки базы данных в файле .env
 
-Шаг 7: Выполните миграции
+Шаг 7: Выполните миграции с сидерами
 ```
-php artisan migrate
+php artisan migrate --seed
+
 ```
 Шаг 8: Запустите веб-сервер
 ```
