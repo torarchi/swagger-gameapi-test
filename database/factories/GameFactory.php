@@ -19,7 +19,7 @@ class GameFactory extends Factory
     {
         $genre = Genre::factory()->create();
         return [
-            'name' => $this->faker->title(10),
+            'name' => $this->faker->text(10),
             'description' => $this->faker->text(25),
             'genre_id' => $genre->id,
         ];
