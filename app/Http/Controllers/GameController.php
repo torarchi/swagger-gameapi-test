@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Game\StoreRequest;
-use App\Http\Requests\Game\UpdateRequest;
-use App\Http\Resources\Game\GameResource;
+use App\Http\Requests\Game\GameRequest;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
@@ -16,18 +14,25 @@ class GameController extends Controller
     public function index()
     {
         $games = Game::with('genre')->get();
-        return GameResource::collection($games);
+        return response()->json($games);
     }
 
     /**
-     * Хранит новый ресурс в базе данных
+     * Хранит новый ресурс в базе данных или обновляет существующий
      */
-    public function store(StoreRequest $request)
+    public function storeOrUpdate(GameRequest $request, Game $game)
     {
         $data = $request->validated();
-        $game = Game::create($data);
 
-        return GameResource::make($game);
+         // Если ресурс существует, обновляем его. Если ресурса не существует, создаем новый
+        if ($game) {
+            $game->update($data);
+        } 
+        else {
+            $game = Game::create($data);
+        }
+
+        return response()->json($game);
     }
 
     /**
@@ -35,17 +40,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        return GameResource::make($game);
-    }
-
-    /**
-     * Обновляет конкретный ресурс в базе данных
-     */
-    public function update(UpdateRequest $request, Game $game)
-    {
-        $data = $request->validated();
-        $game->update($data);
-        return GameResource::make($game);
+        return response()->json($game);
     }
 
     /**
@@ -54,8 +49,6 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
-        return response()->json([
-            'message' => 'done'
-        ]);
+        return response()->json(['message' => 'done']);
     }
 }

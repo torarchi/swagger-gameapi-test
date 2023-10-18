@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedBigInteger('genre_id')->nullable();
             $table->foreign('genre_id')->references('id')->on('genres')->onDelete('set null');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

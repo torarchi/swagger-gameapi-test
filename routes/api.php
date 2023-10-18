@@ -16,10 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
+// Games routes
+Route::get('games', [GameController::class, 'index']); // Получение списка игр
+Route::post('games', [GameController::class, 'storeOrUpdate']); // Создание новой игры
+Route::get('games/{game}', [GameController::class, 'show']); // Просмотр конкретной игры
+Route::delete('games/{game}', [GameController::class, 'destroy']); // Удаление игры
 
-Route::resource('games', GameController::class);
-Route::resource('genres', GenreController::class);
+// Genres routes
+Route::get('genres', [GenreController::class, 'index']); // Получение списка жанров
+Route::post('genres', [GenreController::class, 'storeOrUpdate']); // Создание нового жанра
+Route::get('genres/{genre}', [GenreController::class, 'show']); // Просмотр конкретного жанра
+Route::delete('genres/{genre}', [GenreController::class, 'destroy']); // Удаление жанра

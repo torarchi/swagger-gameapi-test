@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 /**
  * @OA\Info(
- *      title="Ozimiz game",
+ *      title="Swagger Game-Api",
  *      version="1.0",
  * ),
  * 

@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Ozimiz game",
+        "title": "Swagger Game-Api",
         "version": "1.0"
     },
     "paths": {
@@ -361,7 +361,7 @@
                 "tags": [
                     "Genre"
                 ],
-                "summary": "Жанр конкретный",
+                "summary": "Жанр конкретный по ID",
                 "parameters": [
                     {
                         "name": "genre",
