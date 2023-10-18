@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'ozimiz test',
+                'title' => 'swagger game-api-tori',
             ],
 
             'routes' => [
